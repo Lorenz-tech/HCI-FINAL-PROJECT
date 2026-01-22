@@ -3,7 +3,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to top, #696969, #000000, #ffffff);
+    background: linear-gradient(to top, #4b0082, #000000, #191970);
     font-family: sans-serif;
     background-attachment: fixed;
     display: flex;
@@ -23,10 +23,11 @@ body {
 }
 
 .logo {
-    color: midnightblue;
+    color: whitesmoke;
     font-size: 2rem;
     font-weight: bold;
-    font-family: 'Anton', sans-serif;
+    letter-spacing: 4px;
+    font-family: 'Archivo Black', sans-serif;
 }
 
 .nav-links {
@@ -37,7 +38,7 @@ body {
 
 .nav-links li a {
     margin-left: 30px;
-    color: midnightblue;
+    color: whitesmoke;
     text-decoration: none;
     font-size: 1.2rem;
     transition: all 0.5s ease-in-out;
@@ -51,8 +52,8 @@ body {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #7ef3e1;
-  box-shadow: 0 0 10px #7ef3e1;
+  background-color: #ee82ee;
+  box-shadow: 0 0 10px #ee82ee;
   transition: width 0.3s ease;
 }
 
@@ -60,11 +61,84 @@ body {
     transform: translateY(-3px) scale(2.2);
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 
                  0 0 15px rgba(126, 243, 225, 0.6);
-    color: blue;
+    color: white;
 }
 
 .nav-links li a:hover::after {
   width: 100%;
+}
+
+.tech-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.orb {
+    position: absolute;
+    filter: blur(80px);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: move 20s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: #7ef3e1;
+    top: -10%;
+    left: -10%;
+}
+
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: white;
+    bottom: -10%;
+    right: -10%;
+    animation-duration: 25s;
+}
+
+.orb-3 {
+    width: 300px;
+    height: 300px;
+    background: #ff00ff;
+    top: 40%;
+    left: 30%;
+    animation-duration: 15s;
+}
+
+.tech-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(127, 255, 212, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(127, 255, 212, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 2s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 50px 50px; }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(100px, 50px) scale(1.2);
+    }
 }
 
 
@@ -81,23 +155,32 @@ body {
     max-width: 1400px;
     padding: 60px;
 
-    background: rgba(25, 25, 112, 0.5); 
+    background: rgba(157,0,255, 0.5); 
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
 
     border-radius: 20px;
-   box-shadow: 0 0 10px rgba(127, 255, 212, 0.9), 0 0 30px rgba(127, 255, 212, 0.9),inset 0 0 15px rgba(127, 255, 212, 0.5);
-    color: white;
+    box-shadow: 0 0 10px rgba(147, 112, 219, 0.9), 0 0 30px rgba(255, 255, 255, 0.9),inset 0 0 15px rgba(147, 112, 219, 0.5);
+    color: whitesmoke;
     min-height: 70vh;
     box-sizing: border-box;
     text-align: center;
     align-items: center;
     justify-content: center;
+    
+}
+
+#content-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 @keyframes breathe {
-  0%, 100% { box-shadow: 0 0 15px rgba(126, 243, 225, 0.3); }
-  50% { box-shadow: 0 0 25px rgba(126, 243, 225, 0.5); }
+  0%, 100% { box-shadow: 0 0 15px rgba(139, 0, 139, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(147, 112, 219, 0.5); }
 }
 
 .glass-container {
@@ -123,9 +206,9 @@ body {
 
     padding: 12px 25px;
     background: rgba(25, 25, 112, 0.5);
-    border: 1px solid rgba(127, 255, 212, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 50px;
-    color: aquamarine;
+    color: white;
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -133,8 +216,8 @@ body {
 
 .next-btn:hover, .back-btn:hover {
     transform: scale(1.1) translateY(-2px);
-    background: rgba(127, 255, 212, 0.3);
-    box-shadow: 0 0 20px rgba(127, 255, 212, 0.6);
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 .button-group {
