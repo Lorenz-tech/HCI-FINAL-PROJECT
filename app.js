@@ -9,10 +9,8 @@ function nextPage() {
 
     backBtn.style.display = "block";
     nextBtn.style.display = "none";
-
     const contentArea = document.getElementById('content-area');
     contentArea.style.opacity = 0;
-
     setTimeout(() => {
         contentArea.style.opacity = 1;
         contentArea.style.transition = "opacity 0.5s";
@@ -30,10 +28,8 @@ function backPage() {
 
     backBtn.style.display = "none";
     nextBtn.style.display = "block";
-
     const contentArea = document.getElementById('content-area');
     contentArea.style.opacity = 0;
-
     setTimeout(() => {
         contentArea.style.opacity = 1;
         contentArea.style.transition = "opacity 0.5s";
