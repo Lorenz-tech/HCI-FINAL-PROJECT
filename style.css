@@ -174,19 +174,70 @@ body {
 
 .glass-container {
     width: 100%; 
-    padding: 40px 40px 80px 40px ;
+    height: 560px;
+    margin: 50px auto;
 
     background: rgba(17,17,132, 0.5); 
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-
     box-shadow: 0 0 10px rgba(102,241,194, 15), 0 0 30px rgba(102,241,194, 10),inset 0 0 15px rgba(102,241,194, 0.8);
-    color: whitesmoke;
-    min-height: 62vh;
-    box-sizing: border-box;
-    text-align: center;
+    display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    transition: transform 0.6s ease-in-out;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    border: 1px solid rgba(102,241,194, 0.5);
+    box-shadow: 0 0 15px rgba(102,241,194, 0.8);
+    transition: all 0.5s ease;
+    flex-shrink: 0;
+    opacity: 0.6;
+    transform: scale(0.89);
+}
+
+.carousel-track:not(:hover) .center-card {
+  width: 300px;
+  height: 300px;
+  opacity: 1;
+  transform: scale(1.1);
+  border-color: #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.card:hover {
+  width: 400px !important;
+  height: 400px !important;
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
+  border-color: #00ffff;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+  z-index: 10;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.carousel-track:has(.left-card:hover) {
+    transform: translateX(200px);
+}
+
+.carousel-track:has(.right-card:hover) {
+    transform: translateX(-200px);
 }
 
 @keyframes entranceAnimation {
