@@ -39,13 +39,32 @@ function backPage() {
     }, 50);
 }
 
+function transitionTo(event, url) {
+
+    event.preventDefault();
+
+    const homeContainer = document.querySelector('.glass-content');
+
+    if (homeContainer) {
+
+        homeContainer.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+        homeContainer.style.opacity = "0";
+        homeContainer.style.transform = "translateY(40px) scale(0.95)";
+        homeContainer.style.filter = "blur(10px)";
+    }
+
+    setTimeout(() => {
+        window.location.href = url;
+    }, 600);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const partData = {
         "keyboard-mouse": {
             name: "Keyboard & Mouse",
             history: "",
             function: "",
-            img: "img 1.png"
+            image: "../HCI-FINAL-PROJECT/ "
         },
         "pc-case": {
             name: "",
