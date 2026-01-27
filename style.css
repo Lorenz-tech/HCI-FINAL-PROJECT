@@ -26,7 +26,7 @@ body {
     color: whitesmoke;
     font-size: 2rem;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     font-family: 'Archivo Black', sans-serif;
 }
 
@@ -187,12 +187,11 @@ body {
     width: 100%; 
     height: 560px;
     margin: 50px auto;
-    opacity: 0;
-    animation: entranceAnimation 1.2s ease-out forwards;
 
     background: rgba(17,17,132, 0.5); 
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
+    animation: entranceAnimation 1.5s ease-out backwards;
     box-shadow: 0 0 10px rgba(102,241,194, 15), 0 0 30px rgba(102,241,194, 10),inset 0 0 15px rgba(102,241,194, 0.8);
     display: flex;
     align-items: center;
@@ -275,7 +274,7 @@ body {
 }
 
 @keyframes entranceAnimation {
-  0% {opacity: 0; transform: translateY(40px);}
+  0% {opacity: 0; transform: translateY(-40px);}
   100% {opacity: 1; transform: translateY(0);}
 }
 
