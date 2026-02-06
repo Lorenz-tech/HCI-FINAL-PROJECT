@@ -18,7 +18,7 @@ as you will know waht where it is soon.
 * ❌Contacts Menu
 * ❌Test Menu
 
-<!-- Currently working -->
+<!-- Almost Done working -->
 # Almost Done working 
 * UI for remaining file or menu
 * Java script and function intergration 
